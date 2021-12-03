@@ -17,8 +17,7 @@ fun main() {
         return position * depth
     }
 
-    fun part2(input: List<String>): Int {
-        val (position, depth) = input.map {
+    fun part2(input: List<String>): Int = input.map {
             val direction = it.split(" ").first()
             val steps = it.split(" ").last().toInt()
             Pair(direction, steps)
@@ -29,9 +28,9 @@ fun main() {
                 "down" -> acc.copy(third = acc.third + value.second)
                 else -> acc
             }
+        }.let {
+            it.first * it.second
         }
-        return position * depth
-    }
 
 
 
